@@ -1,6 +1,6 @@
 # composer
 symfony-install: ## Install a symfony-skeleton
-	${DC} exec app /bin/sh -c "composer create-project symfony/skeleton ."
+	${DC} exec app /bin/sh -c "composer create-project symfony/skeleton app"
 
 composer-install: ## Composer install
 	${DC} exec app /bin/sh -c "composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader"

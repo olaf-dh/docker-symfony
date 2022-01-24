@@ -26,8 +26,8 @@ Start a new project with a fresh symfony-skeleton by running:
 ```console
 jdoe@host:/home/jdoe/projects/app $ make symfony-install
 ```
-When there exist a project already copy and paste the files/folders into
-the app directory and run:
+When there exist a project already create a directory app and copy and paste the files/folders
+into the app directory and run:
 
 ```console
 jdoe@host:/home/jdoe/projects/app $ make composer-install
@@ -46,19 +46,18 @@ Zend Engine v4.0.3, Copyright (c) Zend Technologies
 
 ## development and production stages
 
-The docker image has two stages for development and production. This way development can take place inside
-the same environment. For the development stage, debugging settings are enabled.
-
+The docker image has two stages for development and production. This way development can take 
+place inside the same environment. For the development stage, debugging settings are enabled.
 ### docker-compose.yml & docker-compose.override.yml
 
-The basic docker-compose.yml is intended to be extended by overrides and is therefore very minimal (no port
-mappings e.g.). Extend it by adding your customized override file. Templates are provided for development
-and production. The development override mounts the project directory from the host machine to enable rapid
-development inside the container.
+The basic docker-compose.yml is intended to be extended by overrides and is therefore very 
+minimal (no port mappings e.g.). Extend it by adding your customized override file. Templates 
+are provided for development and production. The development override mounts the project 
+directory from the host machine to enable rapid development inside the container.
 
 ## composer (php)
-The latest master version of composer (https://getcomposer.org) is installed. Use it from a running container
-to manage your app:
+The latest master version of composer (https://getcomposer.org) is installed. Use it from a 
+running container to manage your app:
 
 ```console
 jdoe@host:/home/jdoe/projects/app $ make bash app
