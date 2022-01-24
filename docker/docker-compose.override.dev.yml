@@ -1,0 +1,28 @@
+##
+# Template for development
+##
+version: '3.8'
+
+services:
+  app:
+    build:
+      target: dev
+    hostname: app
+    environment:
+      - XDEBUG_CONFIG=remote_enable=1 remote_host=host.docker.internal
+      # - PHP_IDE_CONFIG=serverName=php-docker-app
+      - DATABASE_HOST=${MYSQL_HOST}
+      - DATABASE_NAME=${MYSQL_DATABASE}
+      - DATABASE_USER=${MYSQL_USER}
+      - DATABASE_PASSWORD=${MYSQL_PASSWORD}
+  nginx:
+    hostname: nginx
+    ports:
+      - "80:80"
+  database:
+    hostname: database
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    ports:
+      - "3306:3306"

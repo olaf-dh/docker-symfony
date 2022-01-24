@@ -1,0 +1,19 @@
+##
+# Template for production
+##
+version: '3.8'
+
+services:
+  app:
+    environment:
+      - DATABASE_HOST=${MYSQL_HOST}
+      - DATABASE_NAME=${MYSQL_DATABASE}
+      - DATABASE_USER=${MYSQL_USER}
+      - DATABASE_PASSWORD=${MYSQL_PASSWORD}
+  nginx:
+    ports:
+      - "80:80"
+  database:
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
